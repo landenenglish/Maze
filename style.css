@@ -1,0 +1,51 @@
+/* roboto font import*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
+
+:root {
+}
+
+body {
+  margin: 0px;
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(63, 63, 63);
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+canvas {
+  box-shadow: -3px 3px 3px #000;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.tools .color-field {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 3px solid white;
+  align-self: center;
+  margin: 0px 10px;
+}
+
+.tools .button {
+  align-self: center;
+  width: 100px;
+  height: 40px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+  background: #222;
+  margin: 0 15px;
+}
