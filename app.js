@@ -43,7 +43,6 @@ canvas.addEventListener("click", (e) => {
     ctx.beginPath();
     ctx.arc(e.offsetX, e.offsetY, 15, 0, 2 * Math.PI);
     ctx.fillStyle = "rgb(255, 0, 0)";
-    ctx.lineWidth = 4;
     ctx.fill();
     markedRed = true;
     message.innerHTML =
@@ -70,7 +69,7 @@ canvas.addEventListener("mousedown", (e) => {
 });
 
 // remvove drawing when the mouse is released
-canvas.addEventListener("mouseup", (e) => {
+canvas.addEventListener("mouseup", () => {
   if (markedGreen === true && markedRed === true) {
     canvas.removeEventListener("mousemove", draw);
   }
@@ -88,6 +87,7 @@ function draw(e) {
     } else {
       ctx.lineTo(e.offsetX, e.offsetY);
       ctx.strokeStyle = "blue";
+      ctx.lineWidth = 4;
       ctx.stroke();
 
       if (startedStopwatch === false) {
