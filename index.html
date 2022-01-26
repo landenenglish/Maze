@@ -12,18 +12,24 @@
 
   <div class="field">
 
+    <div >
+    <h1 id="time"></h1>
+    </div>
+
     <canvas id="canvas" width="500px" height="500px"></canvas>
 
     <div class="tools">
-      <button type="button" class="button">Start</button>
-      <button id="clear" type="button" class="button">Reset/Clear</button>
-    
-      <div id="finish" class="color-field" style="background: red;"></div>
-      <div id="start" class="color-field" style="background: green;"></div>
-
       <button id="newMaze" type="button" class="button">New Maze</button>
+      <button id="reset" type="button" class="button">Reset/Clear</button>
+      <button id="highScore" type="button" class="button">High Scores</button>
+      <button id="saveScore" type="button" class="button">Save Score</button>
     </div>
 
+  </div>
+
+  <div class="message">
+    <h3 id="message"></h3>
+    <h4 id="stopwatch"></h4>
   </div>
   
   <script src="app.js"></script>
