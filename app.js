@@ -156,7 +156,7 @@ document.getElementById("highScore").addEventListener("click", () => {
   } else {
     document.getElementById(
       "message"
-    ).innerHTML = `The lowest score for this maze is ${highestScore} seconds.`;
+    ).innerHTML = `The lowest time for this maze is ${highestScore} seconds.`;
   }
 });
 
