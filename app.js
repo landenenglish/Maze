@@ -146,7 +146,7 @@ document.getElementById("saveScore").addEventListener("click", () => {
   )} seconds.`;
 });
 
-// display the highest score for the image source
+// display the high (low) score for the image source
 document.getElementById("highScore").addEventListener("click", () => {
   let key = img.src;
   let highestScore = localStorage.getItem(key);
@@ -156,7 +156,7 @@ document.getElementById("highScore").addEventListener("click", () => {
   } else {
     document.getElementById(
       "message"
-    ).innerHTML = `The highest score for this maze is ${highestScore} seconds.`;
+    ).innerHTML = `The lowest score for this maze is ${highestScore} seconds.`;
   }
 });
 
