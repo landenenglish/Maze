@@ -8,14 +8,7 @@
   <title>Maze</title>
 </head>
 <body>
-  
-
   <div class="field">
-
-    <div >
-    <h1 id="time"></h1>
-    </div>
-
     <canvas id="canvas" width="500px" height="500px"></canvas>
 
     <div class="tools">
@@ -23,6 +16,11 @@
       <button id="reset" type="button" class="button">Reset/Clear</button>
       <button id="highScore" type="button" class="button">High Scores</button>
       <button id="saveScore" type="button" class="button">Save Score</button>
+      <button><label id="own" for="useOwn"> Use Own Image</label></button>
+    </div>
+
+    <div class="useOwn">
+      <input type="file" id="useOwn" name="useOwn" accept="image/*">
     </div>
 
   </div>
@@ -31,6 +29,15 @@
     <h3 id="message"></h3>
     <h4 id="stopwatch"></h4>
   </div>
+
+  <h1 id="no">This game doesn't work on touch screen devices</h1>
+
+  <footer> 
+  <p>Landen English</p>
+   <p> Maze images generated from <a href="http://hereandabove.com/maze/mazeorig.form.html" target="_blank">Here</a> </p>
+   <p>Uploaded Images work best with black walls</p>
+
+  </footer>
   
   <script src="app.js"></script>
 </body>

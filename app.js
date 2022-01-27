@@ -13,6 +13,7 @@ message.innerHTML =
 // draw the image on load
 img.onload = function () {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  blackWhite();
 };
 
 // cycle through the maze images
@@ -23,9 +24,18 @@ document.getElementById("newMaze").addEventListener("click", () => {
     mazeNum = 1;
   }
   img.src = `./Mazes/${mazeNum}.jpg`;
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  message.innerHTML =
-    "Mark the starting location by clicking an entrance on the maze image.";
+  reset();
+});
+
+// use image from the user
+document.getElementById("useOwn").addEventListener("change", (e) => {
+  let file = e.target.files[0];
+  let reader = new FileReader();
+  reader.onload = function (e) {
+    img.src = e.target.result;
+    reset();
+  };
+  reader.readAsDataURL(file);
 });
 
 // mark the starting location with a green circle
@@ -97,9 +107,9 @@ function draw(e) {
       }
 
       if (
-        ctx.getImageData(e.offsetX, e.offsetY, 1, 1).data[0] === 255 &&
-        ctx.getImageData(e.offsetX, e.offsetY, 1, 1).data[1] === 0 &&
-        ctx.getImageData(e.offsetX, e.offsetY, 1, 1).data[2] === 0
+        ctx.getImageData(e.offsetX, e.offsetY, 5, 5).data[0] === 255 &&
+        ctx.getImageData(e.offsetX, e.offsetY, 5, 5).data[1] === 0 &&
+        ctx.getImageData(e.offsetX, e.offsetY, 5, 5).data[2] === 0
       ) {
         message.innerHTML = `You have completed the maze in ${seconds} seconds!`;
         stopTimer();
@@ -162,14 +172,37 @@ document.getElementById("highScore").addEventListener("click", () => {
 
 // reset
 document.getElementById("reset").addEventListener("click", () => {
+  reset();
+});
+function reset() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   stopwatch.innerHTML = "";
   message.innerHTML =
     "Mark the starting location by clicking an entrance on the maze image.";
   seconds = 0;
+  stopTimer();
   startedStopwatch = false;
   markedGreen = false;
   markedRed = false;
-
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-});
+  blackWhite();
+}
+
+// make the pixels in the canvas either black or white
+function blackWhite() {
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < imgData.data.length; i += 4) {
+    if (imgData.data[i] > 80) {
+      imgData.data[i] = 255;
+      imgData.data[i + 1] = 255;
+      imgData.data[i + 2] = 255;
+      imgData.data[i + 3] = 255;
+    } else {
+      imgData.data[i] = 0;
+      imgData.data[i + 1] = 0;
+      imgData.data[i + 2] = 0;
+      imgData.data[i + 3] = 255;
+    }
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
