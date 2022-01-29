@@ -35,6 +35,7 @@ const resetGame = () => {
   markedRed = false;
   document.getElementById("saveScore").style.display = "none";
   forceBlackAndWhite();
+  // I think that's everything?
 };
 
 // check the if color of the pixel with coordinates is true
@@ -130,6 +131,7 @@ document.getElementById("newMaze").addEventListener("click", () => {
 });
 
 // use image from the user
+// needs scaling work maybe
 document.getElementById("useOwn").addEventListener("change", (e) => {
   let file = e.target.files[0];
   let reader = new FileReader();
