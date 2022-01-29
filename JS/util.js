@@ -4,7 +4,9 @@
 const forceBlackAndWhite = () => {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  // for all pixels in the image
   for (let i = 0; i < imgData.data.length; i += 4) {
+    // if above or below the threshold
     if (imgData.data[i] > 80) {
       // force white
       imgData.data[i] = 255;
@@ -34,6 +36,7 @@ const resetGame = () => {
   markedGreen = false;
   markedRed = false;
   document.getElementById("saveScore").style.display = "none";
+  document.getElementById("stopwatch").style.display = "flex";
   forceBlackAndWhite();
   // I think that's everything?
 };
