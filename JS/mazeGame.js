@@ -30,7 +30,7 @@ canvas.addEventListener("click", (e) => {
     makeCircle(e.offsetX, e.offsetY, "rgb(255, 0, 0)");
     markedRed = true;
     message.innerHTML =
-      "Start drawing a path through the maze by clicking and dragging. You can only draw from the green entrance marker or from a path that you've already drawn. You cannot draw through black pixels.";
+      "∙ Start drawing a path through the maze by clicking and dragging. <br><br> ∙ You can only draw from the green entrance marker or from a path that you've already drawn.<br><br> ∙ You cannot draw through black pixels.";
   }
 });
 
