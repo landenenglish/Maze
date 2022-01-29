@@ -131,16 +131,14 @@ document.getElementById("newMaze").addEventListener("click", () => {
 
 // use image from the user
 document.getElementById("useOwn").addEventListener("change", (e) => {
-  canvas.height = "500";
-  canvas.width = "500";
   let file = e.target.files[0];
   let reader = new FileReader();
   reader.onload = function (e) {
     img.src = e.target.result;
-    ctx.drawImage(img, 0, 0, img.width, img.height);
+    canvas.height = "500";
+    canvas.width = img.width * (500 / img.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     resetGame();
-    canvas.width = img.width * 0.75;
-    canvas.height = img.height * 0.75;
   };
   reader.readAsDataURL(file);
   document.getElementById("mazeNum").innerHTML = `Your Maze`;
