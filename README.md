@@ -24,7 +24,7 @@ Use Own Image feature
 
 Error message displayed at small screen sizes since this game only works with the cursor
 
-Known Bugs: Use Own Image sometimes isn't consistent with maintaining its aspect ratio with the uploaded image, and refreshing the page or uploading the image a few times usually fixes it. There seems to be some sort of a delay with changing the canvas size to fit the aspect ratio, which doesn’t allow it to work consistently. Use a square image for testing if wide or very large images don't work for now. CSS and scaling isn't yet optimized to handle larger uploaded images, so use small to medium size square images for testing for now. I treated Use Own Image feature as a bonus and implemented it last, so it still has some kinks to be worked out, but the main maze functionality works.
+Known Bugs: This may be fixed, but use Own Image sometimes isn't consistent with maintaining its aspect ratio with the uploaded image, and refreshing the page or uploading the image a few times usually fixes it. Use a square image for testing if wide or very large images don't work for now. CSS and scaling isn't yet optimized to handle larger uploaded images, so use medium size images for testing for now. I treated Use Own Image feature as a bonus and implemented it last, so it still has some kinks to be worked out, but the main maze functionality works.
 
 You sometimes have to scribble a bit on the red marker to complete the maze.
 
