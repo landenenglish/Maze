@@ -38,16 +38,8 @@ canvas {
   margin-bottom: 20px;
 }
 
-.tools #newMaze {
-  align-self: center;
-  width: 100px;
-  height: 40px;
-  border: 2px solid white;
+#own {
   cursor: pointer;
-  color: white;
-  background: #222;
-  margin: 0 15px;
-  border-radius: 5px;
 }
 
 .tools #saveScore {
@@ -55,11 +47,6 @@ canvas {
   color: black;
   display: none;
 }
-
-/* canvas {
-  width: 50%;
-  height: 50%;
-} */
 
 #useOwn {
   display: none;
@@ -102,6 +89,9 @@ footer p a {
     display: none;
   }
   .message {
+    display: none;
+  }
+  footer {
     display: none;
   }
   #no {
