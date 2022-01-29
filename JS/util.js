@@ -135,7 +135,6 @@ document.getElementById("useOwn").addEventListener("change", (e) => {
   let reader = new FileReader();
   reader.onload = function (e) {
     img.src = e.target.result;
-    canvas.height = "500";
     canvas.width = img.width * (500 / img.height);
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     resetGame();
