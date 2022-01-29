@@ -28,8 +28,8 @@ const resetGame = () => {
   stopwatch.innerHTML = "";
   message.innerHTML =
     "Mark the starting location by clicking an entrance on the maze image.";
-  seconds = 0;
   stopTimer();
+  seconds = 0;
   startedStopwatch = false;
   markedGreen = false;
   markedRed = false;

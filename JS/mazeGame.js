@@ -4,12 +4,12 @@ let mazeNum = 1;
 img.src = `./Styles/Mazes/${mazeNum}.jpg`;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-let markedGreen = false;
-let markedRed = false;
-let startedStopwatch = false;
 const message = document.getElementById("message");
 message.innerHTML =
   "Mark the starting location by clicking an entrance on the maze image.";
+let markedGreen = false;
+let markedRed = false;
+let startedStopwatch = false;
 
 // draw the image on load
 img.onload = () => {
@@ -49,7 +49,7 @@ canvas.addEventListener("mousedown", (e) => {
   }
 });
 
-// remvove drawing when the mouse is released
+// remove drawing when the mouse is released
 canvas.addEventListener("mouseup", () => {
   if (markedGreen && markedRed) {
     canvas.removeEventListener("mousemove", draw);
