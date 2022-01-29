@@ -53,8 +53,11 @@ canvas.addEventListener("mouseup", () => {
 
 // draw logic
 const draw = (e) => {
+  const isBlack = checkPixelColor(e.offsetX, e.offsetY, [0, 0, 0]);
+  const isRed = checkPixelColor(e.offsetX, e.offsetY, [255, 0, 0]);
+
   // check if the pixel is black and stop drawing if it is
-  if (checkPixelColor(e.offsetX, e.offsetY, [0, 0, 0])) {
+  if (isBlack) {
     canvas.removeEventListener("mousemove", draw);
   } else {
     // allow drawing
@@ -70,11 +73,12 @@ const draw = (e) => {
     }
 
     // stop the stopwatch once the user reaches red pixel and display completion message
-    if (checkPixelColor(e.offsetX, e.offsetY, [255, 0, 0])) {
+    if (isRed) {
       stopTimer();
       message.innerHTML = `You have completed the maze in ${seconds} seconds!`;
       // unhide the save score button
       document.getElementById("saveScore").style.display = "block";
+      // hide the stopwatch
       document.getElementById("stopwatch").style.display = "none";
     }
   }
