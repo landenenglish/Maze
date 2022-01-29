@@ -7,7 +7,7 @@ const forceBlackAndWhite = () => {
   // for all pixels in the image
   for (let i = 0; i < imgData.data.length; i += 4) {
     // if above or below the threshold
-    if (imgData.data[i] > 80) {
+    if (imgData.data[i] > 150) {
       // force white
       imgData.data[i] = 255;
       imgData.data[i + 1] = 255;
