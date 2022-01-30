@@ -1,7 +1,5 @@
 // global variables
 const img = new Image();
-let mazeNum = 1;
-img.src = `./Styles/Mazes/${mazeNum}.jpg`;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const message = document.getElementById("message");
@@ -13,6 +11,8 @@ let seconds = 0;
 let markedGreen = false;
 let markedRed = false;
 let startedStopwatch = false;
+let mazeNum = 1;
+img.src = `./Styles/Mazes/${mazeNum}.jpg`;
 
 // draw the image on load
 img.onload = () => {
@@ -32,6 +32,7 @@ canvas.addEventListener("click", (e) => {
     // mark the ending location with a red circle if it is not already marked
     makeCircle(e.offsetX, e.offsetY, "rgb(255, 0, 0)");
     markedRed = true;
+    // could be styled better, focusing on js
     message.innerHTML =
       "∙ Start drawing a path through the maze by clicking and dragging. <br><br> ∙ You can only draw from the green entrance marker or from a path that you've already drawn.<br><br> ∙ You cannot draw through black pixels.";
   }
@@ -90,7 +91,7 @@ const draw = (e) => {
 };
 
 // **************************** Buttons ************************************
-// I should refactor into multiple files
+// I should refactor into multiple files with buttons that call functions
 
 // display the high (low time) score for the image source
 document.getElementById("highScore").addEventListener("click", () => {
@@ -149,11 +150,11 @@ document.getElementById("useOwn").addEventListener("change", (e) => {
 // **************************** Helper Functions ************************************
 // I should refactor into multiple files
 
-// check if the user's devices uses touch screen or cursor
 // try to implement this in the future
-const isTouchDevice = () => {
-  return "ontouchstart" in window || navigator.maxTouchPoints;
-};
+// check if the user's devices uses touch screen or cursor
+// const isTouchDevice = () => {
+//   return "ontouchstart" in window || navigator.maxTouchPoints;
+// };
 
 // draw image
 const drawImage = () => {
@@ -225,7 +226,7 @@ const stopTimer = () => {
 
 // display the time in the message box
 const displayTime = () => {
-  stopwatch.innerHTML = ` ${seconds} seconds.`;
+  stopwatch.innerHTML = `${seconds} seconds.`;
 };
 
 // Make a circle with the color and coordinates
@@ -235,3 +236,4 @@ const makeCircle = (x, y, color) => {
   ctx.fillStyle = color;
   ctx.fill();
 };
+// too much in one file, but I'm pretty happy with my code xD
