@@ -128,7 +128,7 @@ document.getElementById("newMaze").addEventListener("click", () => {
   canvas.height = "500";
   canvas.width = "500";
   img.src = `./Styles/Mazes/${mazeNum}.jpg`;
-  mazeNumDisplay = `Maze ${mazeNum}`;
+  mazeNumDisplay.innerHTML = `Maze ${mazeNum}`;
   resetGame();
 });
 
