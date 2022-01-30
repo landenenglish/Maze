@@ -33,7 +33,7 @@ canvas.addEventListener("click", (e) => {
     makeCircle(e.offsetX, e.offsetY, "rgb(255, 0, 0)");
     markedRed = true;
     message.innerHTML =
-      "∙ Start drawing a path through the maze by clicking and dragging. <br> ∙ You can only draw from the green entrance marker or from a path that you've already drawn.<br> ∙ You cannot draw through black pixels.";
+      "∙ Start drawing a path through the maze by clicking and dragging. <br><br> ∙ You can only draw from the green entrance marker or from a path that you've already drawn.<br><br> ∙ You cannot draw through black pixels.";
   }
 });
 
@@ -143,12 +143,19 @@ document.getElementById("useOwn").addEventListener("change", (e) => {
     resetGame();
   };
   reader.readAsDataURL(file);
-  mazeNumDisplay = `Your Maze`;
+  mazeNumDisplay.innerHTML = `Your image`;
 });
 
 // **************************** Helper Functions ************************************
 // I should refactor into multiple files
 
+// check if the user's devices uses touch screen or cursor
+// try to implement this in the future
+const isTouchDevice = () => {
+  return "ontouchstart" in window || navigator.maxTouchPoints;
+};
+
+// draw image
 const drawImage = () => {
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 };
@@ -160,13 +167,13 @@ const forceBlackAndWhite = () => {
   for (let i = 0; i < imgData.data.length; i += 4) {
     // if above or below the threshold
     if (imgData.data[i] > 150) {
-      // force white
+      // force true white
       imgData.data[i] = 255;
       imgData.data[i + 1] = 255;
       imgData.data[i + 2] = 255;
       imgData.data[i + 3] = 255;
     } else {
-      // force black
+      // force true black
       imgData.data[i] = 0;
       imgData.data[i + 1] = 0;
       imgData.data[i + 2] = 0;
