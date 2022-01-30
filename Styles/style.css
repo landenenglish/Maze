@@ -60,6 +60,7 @@ canvas {
   width: 100%;
   margin: 0;
   padding: 0;
+  margin-top: 30px;
 }
 
 .message h3 {
