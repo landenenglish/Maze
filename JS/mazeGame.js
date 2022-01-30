@@ -182,6 +182,7 @@ const forceBlackAndWhite = () => {
     }
   }
   ctx.putImageData(imgData, 0, 0);
+  // pretty slick
 };
 
 // Resets the canvas and variables
