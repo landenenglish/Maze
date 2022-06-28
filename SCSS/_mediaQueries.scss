@@ -1,0 +1,19 @@
+/* if screen is less than 575px, hide everything on the page and unhide #no */
+@media screen and (max-width: 650px) {
+  .field {
+    @include none;
+  }
+  .tools {
+    @include none;
+  }
+  .message {
+    @include none;
+  }
+  footer {
+    @include none;
+  }
+  #no {
+    @include flex(row);
+    height: 90vh;
+  }
+}

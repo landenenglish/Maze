@@ -1,0 +1,6 @@
+.field {
+  canvas {
+    @include flex(row);
+    cursor: pointer;
+  }
+}

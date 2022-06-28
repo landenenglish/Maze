@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Styles/style.css">
-  <title>Maze Game</title>
-</head>
-<body>
-
-  <div class="field">
-    <p id="mazeNum">Maze 1</p>
-    <canvas id="canvas" width="500px" height="500px"></canvas>
-    <div class="tools">
-      <button id="newMaze" type="button" class="button">New Maze</button>
-      <button id="reset" type="button" class="button">Reset/Clear</button>
-      <button id="highScore" type="button" class="button">High Scores</button>
-      <button class="button"><label id="own" for="useOwn"> Use Own Image</label></button>
-      <button id="saveScore" type="button" class="button">Save Score</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Maze Game</title>
+  </head>
+  <body>
+    <div class="field">
+      <p id="mazeNum">Maze 1</p>
+      <canvas id="canvas" width="500px" height="500px"></canvas>
+      <div class="tools">
+        <button id="newMaze" type="button" class="button">New Maze</button>
+        <button id="reset" type="button" class="button">Reset/Clear</button>
+        <button id="highScore" type="button" class="button">High Scores</button>
+        <button class="button">
+          <label id="own" for="useOwn"> Use Own Image</label>
+        </button>
+        <button id="saveScore" type="button" class="button">Save Score</button>
+      </div>
+      <div class="useOwn">
+        <input type="file" id="useOwn" name="useOwn" accept="image/*" />
+      </div>
     </div>
-    <div class="useOwn">
-      <input type="file" id="useOwn" name="useOwn" accept="image/*">
+
+    <div class="message">
+      <h4 id="stopwatch"></h4>
+      <h3 id="message">
+        Mark the starting location by clicking an entrance on the maze image.
+      </h3>
     </div>
-  </div>
 
-  <div class="message">
-    <h4 id="stopwatch"></h4>
-    <h3 id="message">Mark the starting location by clicking an entrance on the maze image.</h3>
-  </div>
+    <h1 id="no">This game doesn't work on touch screen devices</h1>
 
-  <h1 id="no">This game doesn't work on touch screen devices</h1>
+    <footer>
+      <p>
+        Landen English -
+        <a href="https://github.com/landenenglish/Maze" target="_blank"
+          >Source Code</a
+        >
+      </p>
+      <p>
+        Uploaded Images work best with white background, black walls, and medium
+        sized square images (pending scaling improvements)
+      </p>
+      <p>
+        <a
+          href="https://www.google.com/search?q=black+and+white+square+maze+images&tbm=isch&ved=2ahUKEwjnrrbU3df1AhX5gnIEHaLIBuoQ2-cCegQIABAA&oq=black+and+white+square+maze+images&gs_lcp=CgNpbWcQA1CfB1jGCWDpEWgAcAB4AIABN4gBnwGSAQEzmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=W5r1YaeVGvmFytMPopGb0A4&bih=870&biw=1467&rlz=1C5CHFA_enUS765US765#imgrc=xoOFMAf4-He9PM"
+          target="_blank"
+          >Quickly test your own</a
+        >
+      </p>
+    </footer>
 
-  <footer> 
-    <p>Landen English - <a href="https://github.com/landenenglish/Maze" target="_blank">Source Code</a></p>
-    <p>Uploaded Images work best with white background, black walls, and medium sized square images (pending scaling improvements)</p>
-    <p><a href="https://www.google.com/search?q=black+and+white+square+maze+images&tbm=isch&ved=2ahUKEwjnrrbU3df1AhX5gnIEHaLIBuoQ2-cCegQIABAA&oq=black+and+white+square+maze+images&gs_lcp=CgNpbWcQA1CfB1jGCWDpEWgAcAB4AIABN4gBnwGSAQEzmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=W5r1YaeVGvmFytMPopGb0A4&bih=870&biw=1467&rlz=1C5CHFA_enUS765US765#imgrc=xoOFMAf4-He9PM" target="_blank">Quickly test your own</a></p>
-  </footer>
-  
-  <script src="JS/mazeGame.js"></script>
-</body>
+    <script src="JS/mazeGame.js"></script>
+  </body>
 </html>

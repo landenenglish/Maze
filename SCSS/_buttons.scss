@@ -1,0 +1,45 @@
+.field {
+  @include flex(row);
+
+  #useOwn {
+    @include none;
+  }
+  .tools {
+    @include flex(column);
+
+    .button {
+      align-self: center;
+      width: $button-width;
+      height: $button-height;
+      border: 2px solid $border-color;
+      cursor: $cursor;
+      color: $text-color;
+      background: $background-color;
+      margin: 0 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+
+      &:hover {
+        background: invertBackground($background-color);
+        color: invertText($text-color);
+      }
+    }
+
+    #saveScore {
+      background: $save-background;
+      color: $save-text;
+      font-weight: bold;
+      border-color: $save-text;
+      @include none;
+
+      &:hover {
+        background: invertBackground($save-background);
+        color: invertText($save-text);
+      }
+    }
+
+    #own {
+      cursor: $cursor;
+    }
+  }
+}

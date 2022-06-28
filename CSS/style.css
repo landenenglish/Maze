@@ -1,94 +1,102 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
-
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 body {
   margin: 0px;
   padding: 30px;
   font-family: "Roboto", sans-serif;
 }
 
+#no {
+  display: none;
+}
+
 .field {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
-canvas {
-  cursor: pointer;
+.field #useOwn {
+  display: none;
 }
-
-.tools {
+.field .tools {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
-
-.tools .button {
+.field .tools .button {
   align-self: center;
   width: 100px;
   height: 40px;
-  border: 2px solid white;
+  border: 2px solid rgb(116, 112, 112);
   cursor: pointer;
-  color: white;
+  color: #fff;
   background: #222;
   margin: 0 15px;
   border-radius: 5px;
   margin-bottom: 20px;
 }
-
-#own {
+.field .tools .button:hover {
+  background: gold;
+  color: #000;
+}
+.field .tools #saveScore {
+  background: gold;
+  color: #000;
+  font-weight: bold;
+  border-color: #000;
+  display: none;
+}
+.field .tools #saveScore:hover {
+  background: #222;
+  color: #fff;
+}
+.field .tools #own {
   cursor: pointer;
 }
 
-.tools #saveScore {
-  background: gold;
-  color: black;
-  display: none;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 90%;
+  font-size: 15px;
 }
-
-#useOwn {
-  display: none;
+footer p a {
+  text-decoration: none;
+  color: rgb(16, 114, 32);
 }
 
 .message {
-  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-size: 1.2em;
   width: 100%;
   margin: 0;
   padding: 0;
   margin-top: 30px;
 }
-
 .message h3 {
-  font-size: 20px;
+  font-size: 1.2em;
   margin: 0;
   padding: 0;
 }
 
-#no {
-  display: none;
-}
-
-footer {
-  /* bottom of page */
-  position: fixed;
-  bottom: 0;
-  height: 50px;
-  width: 90%;
+.field canvas {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  font-size: 15px;
-}
-
-footer p a {
-  text-decoration: none;
-  color: rgb(16, 114, 32);
+  flex-wrap: wrap;
+  cursor: pointer;
 }
 
 /* if screen is less than 575px, hide everything on the page and unhide #no */
@@ -96,19 +104,25 @@ footer p a {
   .field {
     display: none;
   }
+
   .tools {
     display: none;
   }
+
   .message {
     display: none;
   }
+
   footer {
     display: none;
   }
+
   #no {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 90vh;
   }
-}
+}/*# sourceMappingURL=style.css.map */

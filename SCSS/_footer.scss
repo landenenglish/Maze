@@ -1,0 +1,16 @@
+footer {
+  @include flex(row);
+
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 90%;
+  font-size: 15px;
+
+  p {
+    a {
+      text-decoration: none;
+      color: rgb(16, 114, 32);
+    }
+  }
+}

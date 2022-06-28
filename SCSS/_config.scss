@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+$font-stack: 'Roboto', sans-serif;
+$text-color: #fff;
+$background-color: #222;
+$border-color: rgb(116, 112, 112);
+$cursor: pointer;
+$save-background: gold;
+$save-text: #000;
+$button-height: 40px;
+$button-width: 100px;
+
+body {
+  margin: 0px;
+  padding: 30px;
+  font-family: $font-stack;
+}
+
+#no {
+  display: none;
+}

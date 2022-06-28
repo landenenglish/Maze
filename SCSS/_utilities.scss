@@ -1,0 +1,48 @@
+@mixin flex($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+
+  @if $direction == row {
+    flex-wrap: wrap;
+  }
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+
+  @if $size == '1.2em' {
+    font-weight: bold;
+  }
+}
+
+@mixin none {
+  display: none;
+}
+
+@function invertBackground($color) {
+  @if $color == 'undefined' {
+    @error 'invertBackground: color is not defined';
+  }
+
+  @if $color == $background-color {
+    $color: $save-background;
+  } @else {
+    $color: $background-color;
+  }
+  @return $color;
+}
+
+@function invertText($color) {
+  @if $color == 'undefined' {
+    @error 'invertText: color is not defined';
+  }
+
+  @if $color == $text-color {
+    $color: $save-text;
+  } @else {
+    $color: $text-color;
+  }
+  @return $color;
+}

@@ -1,0 +1,17 @@
+$font-size: 1.2em;
+
+.message {
+  @include flex(column);
+
+  @include font-size($font-size);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+
+  h3 {
+    @include font-size($font-size);
+    margin: 0;
+    padding: 0;
+  }
+}
